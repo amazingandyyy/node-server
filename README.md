@@ -19,8 +19,9 @@ A simple node server module.
 ## Usage
 
 ```javascript
-const nodeServer = require('@amazingandyyy/node-server');
-const app = nodeServer();
+const NodeServer = require('../../index.js')
+const app = new NodeServer()
+const morgan = require('morgan')
 
 app.get('/'. (req, res)=>{
    res.send('hello')
@@ -28,13 +29,13 @@ app.get('/'. (req, res)=>{
 app.post('/ping'. (req, res)=>{
    res.send(req.body);
 })
-app.use((req, res, next)=>{
-   res.end('hello');
-   next();
+app.use(morgan('dev'))
+
+app.use((req, res, next) => {
+  next()
 })
-app.listen('4000', ()=>{
-   console.log('Server is listening on 4000')
-})
+
+app.start({ port: '4000' })
 ```
 
 ## License
