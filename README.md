@@ -14,7 +14,7 @@ A simple node server module.
    </a>
 </p>
 
-> open source!
+> compatible to express middleware!
 
 ## Usage
 
