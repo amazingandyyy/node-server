@@ -1,7 +1,7 @@
 {
-  "name": "open-standard-project",
-  "description": "Standard open source project starter kit.",
-  "version": "0.0.5",
+  "name": "@amazingandyyy/node-server",
+  "description": "Simple server module in node.",
+  "version": "0.0.1",
   "author": {
     "name": "Andy Chen",
     "email": "amazingandyyy@gmail.com",
@@ -18,12 +18,12 @@
     ]
   },
   "markdeck": {
-    "url": "https://github.com/amazingandyyy/open-standard-project/tree/master/docs"
+    "url": "https://github.com/amazingandyyy/node-server/tree/master/docs"
   },
   "bugs": {
-    "url": "https://github.com/amazingandyyy/open-standard-project/issues"
+    "url": "https://github.com/amazingandyyy/node-server/issues"
   },
-  "homepage": "https://github.com/amazingandyyy/open-standard-project",
+  "homepage": "https://github.com/amazingandyyy/node-server",
   "keywords": [
     "open source"
   ],
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/amazingandyyy/open-standard-project.git"
+    "url": "git://github.com/amazingandyyy/node-server.git"
   },
   "devDependencies": {
     "husky": "^3.0.3",
