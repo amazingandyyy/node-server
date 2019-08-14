@@ -18,8 +18,23 @@ A simple node server module.
 
 ## Usage
 
-```shell
-$ git clone git@github.com:amazingandyyy/node-server.git
+```javascript
+const nodeServer = require('@amazingandyyy/node-server');
+const app = nodeServer();
+
+app.get('/'. (req, res)=>{
+   res.send('hello')
+})
+app.post('/ping'. (req, res)=>{
+   res.send(req.body);
+})
+app.use((req, res, next)=>{
+   res.end('hello');
+   next();
+})
+app.listen('4000', ()=>{
+   console.log('Server is listening on 4000')
+})
 ```
 
 ## License

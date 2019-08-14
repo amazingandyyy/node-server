@@ -1,30 +1,36 @@
-#!/usr/bin/env node
-const fs = require('fs')
-const path = require('path')
-const { spawn } = require('child_process')
+const http = require('http');
 
-const cwd = process.cwd()
-const target = process.argv[2] || require(path.resolve(cwd, 'package.json')).main
-const file = path.resolve(cwd, target)
-
-let session = launch()
-
-function launch () {
-  console.log(`\x1b[32m[node-run] node ${target}`, '\x1b[0m')
-  const session = spawn('node', [file])
-  session.stdout.pipe(process.stdout)
-  session.stderr.pipe(process.stderr)
-  return session
+class nodeServer {
+  constructor(middlewares=[]) {
+    this.middlewares = [...middlewares];
+  }
+  start(config) {
+    const handler = (req, res) => {
+      this.handle(req, res, (err) => err && res.writeHead(500))
+    }
+    return http.createServer(handler).listen(config, ()=>{
+      const port = config.port || config;
+      console.log(`\x1b[33m[node-server] Server is listening on port ${port}`, '\x1b[0m')
+    })
+  }
+  use(middleware) {
+    if (typeof middleware !== 'function') throw new Error('Middleware must be a function!');
+    this.middlewares.push(middleware);
+  }
+  handle(req, res, cb) {
+    let counter = 0;
+    const next = (e) => {
+      if(e!=null) return cb(e);
+      if(counter>=this.middlewares.length) return cb();
+      const middle = this.middlewares[counter++];
+      try {
+        middle(req, res, next);
+      } catch(error) {
+        next(error);
+      }
+    }
+    next();
+  }
 }
 
-process.on('SIGINT', () => {
-  console.log('\n[node-run] exits')
-  process.exit()
-})
-
-fs.watch(cwd, (curr, filename) => {
-  if (filename.indexOf('node_module') < 0) {
-    session.kill('SIGINT')
-    session = launch()
-  }
-})
+module.exports = nodeServer;

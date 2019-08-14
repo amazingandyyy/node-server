@@ -1,3 +1,6 @@
 {
-  "main": "index.js"
+  "main": "index.js",
+  "dependencies": {
+    "morgan": "^1.9.1"
+  }
 }

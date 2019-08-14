@@ -1,5 +1,17 @@
-const second = require('./second')
+const nodeServer = require('../../index.js');
+const app = new nodeServer();
+const morgan  = require('morgan')
 
-console.log('hi from frist')
+// app.get('/'. (req, res)=>{
+//    res.send('hello')
+// })
+// app.post('/ping'. (req, res)=>{
+//    res.send(req.body);
+// })
+app.use(morgan('dev'))
 
-second()
+app.use((req, res, next)=>{
+    next();
+})
+
+app.start({port: '4000'})
