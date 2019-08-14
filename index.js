@@ -10,7 +10,7 @@ class nodeServer {
     }
     return http.createServer(handler).listen(config, ()=>{
       const port = config.port || config;
-      console.log(`\x1b[33m[node-server] Server is listening on port ${port}`, '\x1b[0m')
+      console.log(`\x1b[33m[node-server] listening on http://localhost:${port}`, '\x1b[0m')
     })
   }
   use(middleware) {

@@ -13,5 +13,9 @@ app.use(morgan('dev'))
 app.use((req, res, next)=>{
     next();
 })
+app.use((req, res, next)=>{
+    res.end('ok')
+    next();
+})
 
 app.start({port: '4000'})
