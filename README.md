@@ -1,8 +1,8 @@
 <h1 align="center">
-🏃 node-server
+🌐 node-server
 </h1>
 <p align="center">
-Standard open source project starter kit.
+A simple node server module.
 </p>
 
 <p align="center">
