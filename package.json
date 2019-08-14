@@ -1,6 +1,6 @@
 {
   "name": "@amazingandyyy/node-server",
-  "description": "Simple server module in node.",
+  "description": "A simple node server module.",
   "version": "0.0.1",
   "author": {
     "name": "Andy Chen",
