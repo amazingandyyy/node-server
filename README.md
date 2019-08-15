@@ -16,6 +16,8 @@ A simple node server module.
 
 > compatible to express middleware!
 
+> zero dependency
+
 ## Installation
 ```shell
 $ npm i --save @amazingandyyy/node-server
