@@ -25,7 +25,7 @@ const serverParser = (req, res, next) => {
         next();
       });
     }else if(req.headers['content-type'].includes(FORM_DATA)){
-      next(`Doesn\'t support ${FORM_DATA} yet.`);
+      next(`Doesn't support ${FORM_DATA} yet.`);
     }else{
       let body = '';
       req.on('data', chunk => {
