@@ -29,7 +29,7 @@ $ yarn add @amazingandyyy/node-server
 
 ```javascript
 const NodeServer = require('@amazingandyyy/node-server')
-const nodeServerParser = require('@amazingandyyy/body-parser');
+const bodyParser = require('@amazingandyyy/body-parser');
 const morgan = require('morgan')
 
 const app = new NodeServer()
@@ -44,7 +44,7 @@ app.on('post', '/ping', (req, res)=>{
     res.send(req.body)
 })
 
-app.use(nodeServerParser)
+app.use(bodyParser)
 
 app.start({ port: 4000 })
 
