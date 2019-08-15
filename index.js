@@ -57,9 +57,7 @@ class NodeServer {
         return setImmediate(() => cb(e))
       }
       if (counter >= this.middlewares.length) {
-        return setImmediate(() => {
-          cb()
-        })
+        return setImmediate(() => cb())
       }
       const middle = this.middlewares[counter]
       setImmediate(() => {
