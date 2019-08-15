@@ -16,6 +16,13 @@ A simple node server module.
 
 > compatible to express middleware!
 
+## Installation
+```shell
+$ npm i --save @amazingandyyy/node-server
+# or
+$ yarn add @amazingandyyy/node-server
+```
+
 ## Usage
 
 ```javascript
