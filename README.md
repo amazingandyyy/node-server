@@ -1,5 +1,5 @@
 <h1 align="center">
-🌐 node-server
+📡 node-server
 </h1>
 <p align="center">
 A simple node server module.
