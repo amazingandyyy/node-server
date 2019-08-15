@@ -1,21 +1,18 @@
 const NodeServer = require('../../index.js')
+const bodyParser = require('../../body-parser')
 const app = new NodeServer()
 const morgan = require('morgan')
 
-// app.get('/'. (req, res)=>{
-//    res.send('hello')
-// })
-// app.post('/ping'. (req, res)=>{
-//    res.send(req.body);
-// })
-app.use(morgan('dev'))
-
-app.use((req, res, next) => {
-  next()
+app.on('get', '/', (req, res)=>{
+   res.send(200)
 })
-app.use((req, res, next) => {
   res.end('ok')
-  next()
+
+app.on('post', '/ping', (req, res)=>{
+    res.send(req.body)
 })
+
+app.use(morgan('dev'))
+app.use(bodyParser)
 
 app.start({ port: '4000' })
