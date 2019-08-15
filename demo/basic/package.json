@@ -1,6 +1,7 @@
 {
   "main": "index.js",
   "dependencies": {
+    "@amazingandyyy/body-parser": "0.0.5",
     "morgan": "^1.9.1"
   }
 }

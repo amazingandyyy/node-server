@@ -1,5 +1,5 @@
 const NodeServer = require('../../index.js')
-const bodyParser = require('../../body-parser')
+const bodyParser = require('@amazingandyyy/body-parser')
 const app = new NodeServer()
 const morgan = require('morgan')
 
