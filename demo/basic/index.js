@@ -6,7 +6,6 @@ const morgan = require('morgan')
 app.on('get', '/', (req, res)=>{
    res.send(200)
 })
-  res.end('ok')
 
 app.on('post', '/ping', (req, res)=>{
     res.send(req.body)
