@@ -16,7 +16,7 @@ A simple node server module.
 
 > compatible to express middleware!
 
-> zero dependency
+> zero dependencies
 
 ## Installation
 ```shell
