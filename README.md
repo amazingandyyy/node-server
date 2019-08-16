@@ -16,6 +16,8 @@ A simple node server module.
 
 > compatible to express middleware!
 
+> zero dependencies
+
 ## Installation
 ```shell
 $ npm i --save @amazingandyyy/node-server
@@ -27,12 +29,13 @@ $ yarn add @amazingandyyy/node-server
 
 ```javascript
 const NodeServer = require('@amazingandyyy/node-server')
-const nodeServerParser = require('@amazingandyyy/body-parser');
+const bodyParser = require('@amazingandyyy/body-parser');
 const morgan = require('morgan')
 
 const app = new NodeServer()
 
 app.use(morgan('dev'))
+app.use(bodyParser)
 
 app.on('get', '/', (req, res)=>{
    res.send(200)
@@ -41,8 +44,6 @@ app.on('get', '/', (req, res)=>{
 app.on('post', '/ping', (req, res)=>{
     res.send(req.body)
 })
-
-app.use(nodeServerParser)
 
 app.start({ port: 4000 })
 

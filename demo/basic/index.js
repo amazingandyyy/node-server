@@ -1,4 +1,4 @@
-const NodeServer = require('@amazingandyyy/node-server')
+const NodeServer = require('../../index.js')
 const bodyParser = require('@amazingandyyy/body-parser')
 const app = new NodeServer()
 const morgan = require('morgan')
