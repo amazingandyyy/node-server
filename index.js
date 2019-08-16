@@ -50,6 +50,14 @@ class NodeServer {
         res.end(JSON.stringify(content))
       }
     }
+    res.html = (content, value = {}) => {
+      if (typeof content === 'string') {
+        res.writeHead(content)
+        res.end()
+      } else {
+        //  user Logger
+      }
+    }
     let counter = 0
     const next = (e) => {
       if (e != null) {
