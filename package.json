@@ -1,7 +1,7 @@
 {
   "name": "@amazingandyyy/node-server",
   "description": "A simple node server module.",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": {
     "name": "Andy Chen",
     "email": "amazingandyyy@gmail.com",
@@ -11,7 +11,7 @@
     "test": "standard --fix",
     "precommit": "npm run test",
     "prepublish": "git reset && npm version patch --force && git add .",
-    "publish": "npm publish --access=public"
+    "publish:public": "npm publish --access=public"
   },
   "lint-staged": {
     "*.js": [
