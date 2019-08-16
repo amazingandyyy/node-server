@@ -1,7 +1,7 @@
 {
   "name": "@amazingandyyy/node-server",
   "description": "A simple node server module.",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "author": {
     "name": "Andy Chen",
     "email": "amazingandyyy@gmail.com",
@@ -39,7 +39,7 @@
     "standard": "*"
   },
   "files": [
-    "index.js"
+    "*.js"
   ],
   "dependencies": {}
 }

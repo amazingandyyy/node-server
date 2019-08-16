@@ -1,5 +1,5 @@
 const http = require('http')
-const { RequestMethods } = require('./constants.js')
+const { RequestMethods } = require('./constants')
 
 class NodeServer {
   constructor (middlewares = []) {
