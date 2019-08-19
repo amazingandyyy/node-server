@@ -12,6 +12,9 @@ A simple node server module.
    <a href="https://circleci.com/gh/amazingandyyy/node-server">
       <img src="https://circleci.com/gh/amazingandyyy/node-server.svg?style=svg" />
    </a>
+   <a href="https://www.npmjs.com/package/@amazingandyyy/node-server">
+      <img src="https://badge.fury.io/js/%40amazingandyyy%2Fnode-server.svg" />
+   </a>
 </p>
 
 > compatible to express middleware!
