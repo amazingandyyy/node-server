@@ -1,7 +1,6 @@
 {
   "main": "index.js",
   "dependencies": {
-    "@amazingandyyy/body-parser": "0.0.6",
     "@amazingandyyy/server-logger": "0.0.4"
   }
 }

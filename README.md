@@ -30,19 +30,19 @@ $ yarn add @amazingandyyy/node-server
 ```javascript
 const NodeServer = require('@amazingandyyy/node-server')
 const bodyParser = require('@amazingandyyy/body-parser');
-const morgan = require('morgan')
+const morgan = require('morgan') // compatible to express middlewares
 
 const app = new NodeServer()
 
 app.use(morgan('dev'))
 app.use(bodyParser)
 
-app.on('get', '/', (req, res)=>{
-   res.send(200)
+app.get('/ping', (req, res)=>{
+   res.send('pong')
 })
 
-app.on('post', '/ping', (req, res)=>{
-    res.send(req.body)
+app.post('/register', (req, res)=>{
+   res.send(req.body)
 })
 
 app.start({ port: 4000 })

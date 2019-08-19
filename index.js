@@ -106,6 +106,18 @@ class NodeServer {
     const [method, route, cb] = args
     this.routers[method.toUpperCase()][route] = [middlewares, cb]
   }
+  get(...args) {
+    this.on('get', ...args)
+  }
+  post(...args) {
+    this.on('post', ...args)
+  }
+  put(...args) {
+    this.on('put', ...args)
+  }
+  delete(...args) {
+    this.on('delete', ...args)
+  }
 }
 
 module.exports = NodeServer
