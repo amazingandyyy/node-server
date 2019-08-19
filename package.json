@@ -11,7 +11,8 @@
     "test": "standard --fix",
     "precommit": "npm run test",
     "prepublish:local": "git reset && npm version patch --force && git add .",
-    "publish:public": "npm run prepublish:local && npm publish --access=public"
+    "publish:public": "npm run prepublish:local && npm publish --access=public",
+    "demo": "node-run demo/basic/index.js"
   },
   "lint-staged": {
     "*.js": [

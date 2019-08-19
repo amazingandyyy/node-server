@@ -11,6 +11,11 @@ app.get('/welcome', (req, res) => {
   res.send('welcome')
 })
 
+app.get('/welcome/:name/:age', (req, res) => {
+  console.log(req);
+  res.send('welcome')
+})
+
 function checkUser(req, res, next){
   req.user={id: '345678987654', status: 'member'};
   next()
@@ -23,6 +28,8 @@ function checkUserStatus(req, res, next){
 app.post('/ping', (req, res) => {
   res.send('pong')
 })
+
+console.log(app.routes);
 
 app.use(logger('dev'))
 

@@ -10,9 +10,14 @@ class NodeServer {
     }, {})
   }
 
+  get routes () {
+    return this.routers;
+  }
+
   start (config) {
     const handler = (req, res) => {
       this.handle(req, res, (err) => {
+        console.log(req)
         if (err) {
           console.error(err)
           res.writeHead(500)
@@ -26,6 +31,8 @@ class NodeServer {
               return res.end(err || 'Internal Server Error')
             }
           })
+        // } else if () {
+
         } else {
           res.writeHead(404)
           return res.end('Page Not Found')
@@ -103,7 +110,17 @@ class NodeServer {
 
   on (...args) {
     const middlewares = args.splice(2, args.length - 3);
-    const [method, route, cb] = args
+    let [method, route, cb] = args
+    const hasParams = route.includes('/:');
+    if(hasParams) {
+      const params = route.split('/:').slice(1);
+      const getParamsMiddleware = (req, res, next) => {
+        console.log(req)
+        next()
+      }
+      middlewares.push(getParamsMiddleware)
+      route = route.split('/:')[0];
+    }
     this.routers[method.toUpperCase()][route] = [middlewares, cb]
   }
   get(...args) {
