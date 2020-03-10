@@ -1,4 +1,5 @@
 const http = require('http')
+const make = require('./make')
 const { RequestMethods } = require('./constants')
 
 class NodeServer {
@@ -117,6 +118,9 @@ class NodeServer {
   }
   delete(...args) {
     this.on('delete', ...args)
+  }
+  make(...args) {
+    make(...args)
   }
 }
 

@@ -1,0 +1,6 @@
+{
+  "main": "index.js",
+  "dependencies": {
+    "@amazingandyyy/server-logger": "0.0.4"
+  }
+}
