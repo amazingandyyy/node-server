@@ -3,5 +3,7 @@ const app = new NodeServer()
 const logger = require('@amazingandyyy/server-logger')
 
 app.make({
-  key: 'value'
+  'user': {
+    'name': 'andy'
+  }
 })
